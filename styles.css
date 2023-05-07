@@ -37,3 +37,6 @@ body{
 .nav-item a{
   color: floralwhite;
 }
+.with-gap{
+  margin-left: 15px;
+}
