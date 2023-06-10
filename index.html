@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
-
+  <!-- build:css css/main.css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.9.2/bootstrap-social.min.css" integrity="sha512-3CYhYJnb7/677SX8kzxL2+gW6vVzXiVEC6ZhK0S4tGVp7dTlMjSZPVvA79aH8YMU0xuKn2tLZIFaBctUi4Cb/w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./styles.css">
+  <!-- endbuild -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>Intelicial AI</title>
@@ -43,9 +44,54 @@
             </a>
           </li>
         </ul>
+        <span class="navbar-text">
+          <a data-bs-toggle="modal" data-bs-target="#loginModal">
+            <span class="fa fa-sign-in"></span>Login
+          </a>
+        </span>
       </div>
     </div>
   </nav>
+  <div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Login </h4>
+          <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-sm-4">
+                <label class="sr-only" for="inputEmail"></label>
+                <input type="email" class="form-control form-control-sm mr-1" id="inputEmail"
+                  placeholder="Enter email" />
+              </div>
+              <div class="form-group col-sm-4">
+                <label class="sr-only" for="inputPassword"></label>
+                <input type="password" class="form-control form-control-sm mr-1" id="inputPassword"
+                  placeholder="Enter Password" />
+              </div>
+              <div class="col-sm-auto">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label">Remember me</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <button class="btn btn-primary btn-sm ml-auto" type="submit">
+                Sign in
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm ml-1" data-bs-dismiss="modal">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <header class="jumbotron">
     <div class="container">
       <div class="row row-header">
@@ -59,7 +105,8 @@
         </div>
         <div class="col-12 col-sm-3 align-self-center p-2">
           <div class="d-grid gap-2">
-            <a role="button" href="#reserve" class="btn btn-sm btn-warning" type="button">Reserve a Project</a>
+            <a role="button" class="btn btn-sm btn-warning" type="button" data-bs-toggle="modal"
+              data-bs-target="#reserveModal">Reserve a Project</a>
           </div>
         </div>
       </div>
@@ -67,6 +114,58 @@
   </header>
 
   <div class="container">
+    <div class="row row-content">
+      <div class="col">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img src="./img/autonomous_car.png" alt="Autonoumous Car" width="150px" />
+              <div class="carousel-caption d-none d-md-block">
+                <h2>Autonomous Car <span class="badge bg-danger">NEW</span> <span data-bs-toggle="tooltip"
+                    data-bs-placement="top" data-bs-html="true" title="Price of the project"
+                    class="badge rounded-pill bg-secondary">$4.99</span></h2>
+                <p class="d-none d-sm-block">It is a vehicle(car) capable of sensing its environment and operating
+                  without human involvement. A
+                  human passenger is not required to take control of the vehicle at any time, nor is a human passenger
+                  required to be present in the vehicle at all.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./img/humanoid.png" alt="John Henlry" width="150px" />
+              <div class="carousel-caption d-none d-md-block">
+                <h2>Open Humanoid <span class="badge bg-danger">HOT</span></h2>
+                <p class="d-none d-sm-block">A chat bot which is capable of talking like humans and taking smart
+                  decisions based on different
+                  situations. Can performs actions like human. </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./img/henlry.png" alt="John Henlry" width="150px" />
+
+              <div class="carousel-caption d-none d-md-block">
+                <h2>John Henlry</h2>
+                <h4>Executive Project Manager</h4>
+                <p class="d-none d-sm-block">Eleven years experience including management of complex technical projects,
+                  customer advocacy, team
+                  building and engineering. Worked across company divisions and geographies to deliver quality
+                  products to a world-wide market.</p>
+              </div>
+            </div>
+          </div>
+          <ol class="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+          </ol>
+          <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <ol class="col-12 breadcrumb">
         <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
@@ -81,9 +180,11 @@
           <img src="./img/autonomous_car.png" alt="Autonoumous Car" class="img-thumbnail" width="150px" />
 
           <div class="media-body px-3 align-self-center">
-            <h2>Autonomous Car <span class="badge bg-danger">NEW</span> <span
+            <h2>Autonomous Car <span class="badge bg-danger">NEW</span> <span data-bs-toggle="tooltip"
+                data-bs-placement="top" data-bs-html="true" title="Price of the project"
                 class="badge rounded-pill bg-secondary">$4.99</span></h2>
-            <p class="d-none d-sm-block">It is a vehicle(car) capable of sensing its environment and operating without human involvement. A
+            <p class="d-none d-sm-block">It is a vehicle(car) capable of sensing its environment and operating without
+              human involvement. A
               human passenger is not required to take control of the vehicle at any time, nor is a human passenger
               required to be present in the vehicle at all.</p>
           </div>
@@ -99,7 +200,8 @@
         <div class="media d-flex">
           <div class="media-body align-self-center px-3">
             <h2>Open Humanoid <span class="badge bg-danger">HOT</span></h2>
-            <p class="d-none d-sm-block">A chat bot which is capable of talking like humans and taking smart decisions based on different
+            <p class="d-none d-sm-block">A chat bot which is capable of talking like humans and taking smart decisions
+              based on different
               situations. Can performs actions like human. </p>
           </div>
           <img src="./img/humanoid.png" alt="John Henlry" class="img-thumbnail" width="150px" />
@@ -118,7 +220,8 @@
           <div class="media-body align-self-center px-3">
             <h2>John Henlry</h2>
             <h4>Executive Project Manager</h4>
-            <p class="d-none d-sm-block">Eleven years experience including management of complex technical projects, customer advocacy, team
+            <p class="d-none d-sm-block">Eleven years experience including management of complex technical projects,
+              customer advocacy, team
               building and engineering. Worked across company divisions and geographies to deliver quality
               products to a world-wide market.</p>
           </div>
@@ -127,57 +230,74 @@
     </div>
   </div>
 
-  <div class="container" id="reserve">
-    <div class="row row-header">
-      <div class="row-content col-12 col-md-8 offset-md-2">
-        <div class="card">
-          <h3 class="card-header bg-warning text-white"><strong>Reserve a Project</strong></h3>
-          <form>
-            <div class="row form-group row-header py-3">
-              <label for="date" class="col-md-3 col-12 col-form-label">Number of Members</label>
-              <div class="col-12 col-md-8">
-                <label>
-                  <input name="group3" type="radio" checked />
-                  <span>1</span>
-                </label>
-                <label>
-                  <input class="with-gap" name="group3" type="radio" checked />
-                  <span>2</span>
-                </label>
-                <label>
-                  <input class="with-gap" name="group3" type="radio" checked />
-                  <span>3</span>
-                </label>
-                <label>
-                  <input class="with-gap" name="group3" type="radio" checked />
-                  <span>4</span>
-                </label>
-                <label>
-                  <input class="with-gap" name="group3" type="radio" checked />
-                  <span>5</span>
-                </label>
-                <label>
-                  <input class="with-gap" name="group3" type="radio" checked />
-                  <span>6</span>
-                </label>
-              </div>
+  <div class="modal fade" id="reserveModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><strong>Reserve a Project</strong></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row form-group row-header py-3">
+            <label for="date" class="col-md-3 col-12 col-form-label">Number of Members</label>
+            <div class="col-12 col-md-8">
+              <label>
+                <input name="group3" type="radio" checked />
+                <span>1</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group3" type="radio" checked />
+                <span>2</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group3" type="radio" checked />
+                <span>3</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group3" type="radio" checked />
+                <span>4</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group3" type="radio" checked />
+                <span>5</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group3" type="radio" checked />
+                <span>6</span>
+              </label>
             </div>
-            <div class="row form-group row-header pb-3">
-              <label for="date" class="col-md-3 col-12 col-form-label">Date and Time</label>
-              <div class="col-12 col-md-4">
-                <input type="text" class="form-control" id="date" name="date" placeholder="Date">
-              </div>
-              <div class="col-12 col-md-3">
-                <input type="text" class="form-control" id="time" name="Time" placeholder="Time">
-              </div>
+          </div>
+          <div class="row form-group row-header pb-3">
+            <label for="section" class="col-md-3 col-12 col-form-label">Section</label>
+            <div class="col-12 col-md-9">
+            <div class="btn-group">
+            <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off"
+              checked>
+            <label class="btn btn-outline-success btn-sm" for="success-outlined">Individual</label>
+
+            <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+            <label class="btn btn-outline-danger btn-sm" for="danger-outlined">Team</label>
             </div>
-            <div class="form-group row row-header pb-3">
-              <div class="col-12 offset-md-3 col-md-9">
-                <button type="reserve" class="btn btn-primary">Reserve</button>
-              </div>
             </div>
-          </form>
-        </div>
+          </div>
+          <div class="row form-group row-header pb-3">
+            <label for="date" class="col-md-3 col-12 col-form-label">Date and Time</label>
+            <div class="col-12 col-md-4">
+              <input type="text" class="form-control" id="date" name="date" placeholder="Date">
+            </div>
+            <div class="col-12 col-md-3">
+              <input type="text" class="form-control" id="time" name="Time" placeholder="Time">
+            </div>
+          </div>
+          <div class="form-group row row-header pb-3">
+            <div class="col-12 offset-md-3 col-md-9">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary">Reserve</button>
+            </div>
+          </div>
+        </form>
+      </div>
       </div>
     </div>
   </div>
@@ -232,9 +352,7 @@
     </div>
   </footer>
 
-  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 
 </html>
